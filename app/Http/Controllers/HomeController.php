@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Helpers;
+use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +15,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $h = new Helpers;
+        View::share('h', $h);
     }
 
     /**
