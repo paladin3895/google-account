@@ -1,6 +1,6 @@
 <template>
     <div class="modal fade" ref="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <!-- Modal -->
+        <!-- Modal -->
         <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -10,12 +10,14 @@
                     </button>
                 </div>
                 <div class="modal-body text-center">
-                    <a :href="route('oauth', ['type' => 'google'])" class="btn btn-danger btn-lg w-100 mb-3">
-                        Login with Google
-                    </a>
-                    <a :href="route('oauth', ['type' => 'facebook'])" class="btn btn-primary btn-lg w-100 mb-3">
-                        Login with Facebook
-                    </a>
+                    <template>
+                        <a :href="route('oauth', {type: 'google'})" class="btn btn-danger btn-lg w-100 mb-3">
+                            Login with Google
+                        </a>
+                        <a :href="route('oauth', {type: 'facebook'})" class="btn btn-primary btn-lg w-100 mb-3">
+                            Login with Facebook
+                        </a>
+                    </template>
                 </div>
             </div>
         </div>
@@ -26,6 +28,12 @@
 import Vuex from 'vuex';
 
 export default {
+    data() {
+        return {
+
+        }
+    },
+
     mounted() {
         console.log('Component mounted.')
         this.$loginModal.on('hidden.bs.modal', () => {
@@ -46,6 +54,7 @@ export default {
     computed: {
         ...Vuex.mapGetters({
             modalShow: 'modalShow',
+            route: 'route',
         }),
 
         $loginModal() {
@@ -57,7 +66,7 @@ export default {
         ...Vuex.mapActions({
             openModal: 'openModal',
             hideModal: 'hideModal',
-        })
+        }),
     },
 }
 </script>

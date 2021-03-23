@@ -22,8 +22,8 @@
 <body>
     <div id="app"
         user="{{ json_encode(\Auth::user(), JSON_FORCE_OBJECT) }}"
+        routes="{{ json_encode($h->getRoutes(), JSON_FORCE_OBJECT) }}"
         config="{{ json_encode([], JSON_FORCE_OBJECT) }}"
-        routes="{{ json_encode([], JSON_FORCE_OBJECT) }}"
         class="">
         <navbar-component
             ></navbar-component>
@@ -31,7 +31,7 @@
             <div class="row mt-3">
                 <div class="col">
                     <auth-component></auth-component>
-                    <example-component></example-component>
+                    <dashboard-component></dashboard-component>
                 </div>
             </div>
         </div>
