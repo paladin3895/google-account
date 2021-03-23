@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+Route::any('/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
+Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+
+Route::get('/oauth/{type}/callback', [App\Http\Controllers\OauthController::class, 'callback'])->name('oauth.callback');
+Route::get('/oauth/{type}', [App\Http\Controllers\OauthController::class, 'oauth'])->name('oauth');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
