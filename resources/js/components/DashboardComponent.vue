@@ -4,10 +4,10 @@
 
         <div class="card-body">
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-4 col-md-2">
                     <img :src="user.photo" :alt="user.name" class="img-thumbnail">
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-8 col-md-4">
                     <p>Email: {{ user.email }}</p>
                     <p>Name: {{ user.name }}</p>
                 </div>

@@ -37991,14 +37991,14 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "card-body" }, [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-2" }, [
+            _c("div", { staticClass: "col-sm-4 col-md-2" }, [
               _c("img", {
                 staticClass: "img-thumbnail",
                 attrs: { src: _vm.user.photo, alt: _vm.user.name }
               })
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-sm-4" }, [
+            _c("div", { staticClass: "col-sm-8 col-md-4" }, [
               _c("p", [_vm._v("Email: " + _vm._s(_vm.user.email))]),
               _vm._v(" "),
               _c("p", [_vm._v("Name: " + _vm._s(_vm.user.name))])
